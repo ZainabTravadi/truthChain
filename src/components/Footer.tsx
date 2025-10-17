@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <Shield className="h-6 w-6 text-primary" />
-              <span className="text-lg font-bold text-gradient">CrimsonTruth</span>
+              <span className="text-lg font-bold text-gradient">TruthChain</span>
             </div>
             <p className="text-sm text-muted-foreground">
               AI-powered fake news detection secured by blockchain technology.
@@ -90,7 +90,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-8 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p>&copy; {currentYear} CrimsonTruth. All rights reserved.</p>
+          <p>&copy; {currentYear} TruthChain. All rights reserved.</p>
         </div>
       </div>
     </footer>

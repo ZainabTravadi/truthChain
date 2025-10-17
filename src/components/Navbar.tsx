@@ -24,7 +24,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <Shield className="h-8 w-8 text-primary transition-smooth group-hover:text-accent" />
-            <span className="text-xl font-bold text-gradient">CrimsonTruth</span>
+            <span className="text-xl font-bold text-gradient">TruthChain</span>
           </Link>
 
           {/* Desktop Navigation */}

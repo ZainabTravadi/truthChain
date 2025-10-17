@@ -48,7 +48,7 @@ const About = () => {
           className="max-w-4xl mx-auto"
         >
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">
-            <span className="text-gradient">About CrimsonTruth</span>
+            <span className="text-gradient">About TruthChain</span>
           </h1>
           <p className="text-xl text-center text-muted-foreground mb-12">
             Fighting misinformation with AI and blockchain technology
@@ -59,7 +59,7 @@ const About = () => {
             <h2 className="text-2xl font-bold mb-4">Our Mission</h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                In an era where misinformation spreads faster than truth, CrimsonTruth provides a
+                In an era where misinformation spreads faster than truth, TruthChain provides a
                 transparent, decentralized platform for verifying news articles using advanced AI
                 and blockchain technology.
               </p>
@@ -131,7 +131,7 @@ const About = () => {
           <Card className="p-8 bg-gradient-primary text-center">
             <h2 className="text-2xl font-bold mb-4 text-white">Join the Fight Against Misinformation</h2>
             <p className="text-white/90 mb-6 max-w-2xl mx-auto">
-              CrimsonTruth is more than a tool—it's a movement towards transparent, verifiable truth.
+              TruthChain is more than a tool—it's a movement towards transparent, verifiable truth.
               Start verifying articles today and contribute to a more informed world.
             </p>
             <div className="text-sm text-white/70">
