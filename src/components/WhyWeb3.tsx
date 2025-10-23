@@ -5,23 +5,23 @@ const WhyWeb3 = () => {
   const features = [
     {
       icon: Lock,
-      title: 'Immutable Records',
-      description: 'Once a verdict is stored on blockchain, it cannot be altered or deleted, ensuring permanent accountability.',
+      title: 'Secure Records',
+      description: 'Once a verdict is stored in the system, it cannot be tampered with or removed, ensuring long-term accountability.',
     },
     {
       icon: Database,
-      title: 'Decentralized Storage',
-      description: 'Evidence stored on IPFS ensures no single entity controls the data, promoting transparency.',
+      title: 'Reliable Data Storage',
+      description: 'All evidence is securely stored in distributed servers, ensuring data integrity and consistent access.',
     },
     {
       icon: Users,
-      title: 'Community Governance',
-      description: 'Token holders can challenge verdicts and vote on disputed cases, creating a democratic verification system.',
+      title: 'Community Oversight',
+      description: 'Users can review, challenge, and provide feedback on verdicts, promoting fair and transparent decision-making.',
     },
     {
       icon: FileCheck,
-      title: 'Verifiable Proof',
-      description: 'Every analysis includes cryptographic proof that anyone can verify independently on the blockchain.',
+      title: 'Verifiable Results',
+      description: 'Each analysis includes verifiable references and reports that anyone can cross-check for authenticity.',
     },
   ];
 
@@ -35,9 +35,9 @@ const WhyWeb3 = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Why Web3?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Why Trust Us?</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Blockchain technology brings unprecedented transparency and trust to fact-checking
+            Our system ensures transparency, accuracy, and reliability in every analysis we perform.
           </p>
         </motion.div>
 

@@ -47,6 +47,7 @@ const HeroSection = () => {
       {/* Content */}
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8">
+          {/* Top Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -54,10 +55,11 @@ const HeroSection = () => {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-primary/20 mb-6">
               <Shield className="h-4 w-4 text-primary" />
-              <span className="text-sm font-medium">Web3 + AI Powered Verification</span>
+              <span className="text-sm font-medium">AI-Powered News Verification</span>
             </div>
           </motion.div>
 
+          {/* Hero Heading */}
           <motion.h1
             className="text-5xl md:text-7xl font-black tracking-tight"
             initial={{ opacity: 0, y: 20 }}
@@ -69,16 +71,18 @@ const HeroSection = () => {
             <span className="text-gradient">Trust.</span>
           </motion.h1>
 
+          {/* Subtext */}
           <motion.p
-            className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            AI-powered fake news detection secured by blockchain technology.
-            Transparency you can verify. Trust you can prove.
-          </motion.p>
+    className="text-xs md:text-lg text-muted-foreground max-w-2xl mx-auto"
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, delay: 0.2 }}
+>
+    Experience real-time AI-powered fake news detection. 
+    Cutting-edge analysis designed to help you separate truth from misinformation.
+</motion.p>
 
+          {/* Buttons */}
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             initial={{ opacity: 0, y: 20 }}
@@ -111,9 +115,9 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             {[
-              { icon: Zap, title: 'Instant Analysis', desc: 'AI-powered verification in seconds' },
-              { icon: Lock, title: 'Blockchain Secured', desc: 'Immutable proof on-chain' },
-              { icon: Shield, title: 'Transparent', desc: 'View all evidence sources' },
+              { icon: Zap, title: 'Instant Analysis', desc: 'AI-powered verification in minutes' },
+              { icon: Lock, title: 'Data Integrity', desc: 'Your checks remain private and secure' },
+              { icon: Shield, title: 'Transparent Results', desc: 'View detailed evidence sources' },
             ].map((feature, idx) => (
               <div
                 key={idx}

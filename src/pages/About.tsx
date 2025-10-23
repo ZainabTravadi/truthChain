@@ -9,32 +9,38 @@ const About = () => {
     {
       icon: Brain,
       title: 'Advanced AI Models',
-      description: 'State-of-the-art natural language processing and fact-checking algorithms analyze articles against verified databases.',
+      description:
+        'Powered by Google Gemini and integrated with trusted news APIs, our AI analyzes articles, cross-references claims, and evaluates reliability in real time.',
     },
     {
       icon: Lock,
-      title: 'Blockchain Security',
-      description: 'All verdicts are stored immutably on-chain with IPFS evidence, ensuring transparency and preventing manipulation.',
+      title: 'Data Integrity',
+      description:
+        'Our systems ensure all verification results remain secure, transparent, and tamper-proof within the platform.',
     },
     {
       icon: Shield,
       title: 'Source Credibility',
-      description: 'We cross-reference claims with trusted academic, governmental, and fact-checking sources with proven track records.',
+      description:
+        'We cross-reference claims with trusted academic, governmental, and fact-checking sources with proven track records.',
     },
     {
       icon: Users,
-      title: 'Community Governance',
-      description: 'Token holders can challenge verdicts and participate in DAO decisions about platform improvements.',
+      title: 'Community Collaboration',
+      description:
+        'Users can provide feedback, flag inaccuracies, and contribute to improving the platform’s verification accuracy.',
     },
     {
       icon: Zap,
       title: 'Real-Time Analysis',
-      description: 'Get instant verification results with detailed evidence breakdowns and confidence scoring.',
+      description:
+        'Get instant verification results with detailed evidence breakdowns and confidence scoring.',
     },
     {
       icon: Globe,
       title: 'Open & Transparent',
-      description: 'Our verification process is fully auditable, with all evidence sources publicly accessible.',
+      description:
+        'Our verification process is fully auditable, with all evidence sources publicly accessible.',
     },
   ];
 
@@ -51,7 +57,7 @@ const About = () => {
             <span className="text-gradient">About TruthChain</span>
           </h1>
           <p className="text-xl text-center text-muted-foreground mb-12">
-            Fighting misinformation with AI and blockchain technology
+            Fighting misinformation with cutting-edge artificial intelligence
           </p>
 
           {/* Mission */}
@@ -60,17 +66,18 @@ const About = () => {
             <div className="space-y-4 text-muted-foreground">
               <p>
                 In an era where misinformation spreads faster than truth, TruthChain provides a
-                transparent, decentralized platform for verifying news articles using advanced AI
-                and blockchain technology.
+                transparent platform for verifying news articles using advanced AI and data-driven
+                analysis.
               </p>
               <p>
                 We believe that trust in information should be earned through verifiable evidence,
-                not editorial opinion. By combining artificial intelligence with Web3 infrastructure,
-                we create an immutable record of fact-checking that anyone can audit.
+                not editorial opinion. By combining artificial intelligence with trusted data
+                pipelines, we create a reliable fact-checking process that anyone can understand and
+                evaluate.
               </p>
               <p>
-                Our platform empowers users to make informed decisions by providing confidence scores,
-                detailed evidence, and blockchain-secured verdicts that can't be altered or censored.
+                Our platform empowers users to make informed decisions by providing confidence scores
+                and detailed evidence that can’t be altered or censored.
               </p>
             </div>
           </Card>
@@ -99,44 +106,15 @@ const About = () => {
             </div>
           </div>
 
-          {/* Technology Stack */}
-          <Card className="p-8 mb-12">
-            <h2 className="text-2xl font-bold mb-4">Technology Stack</h2>
-            <div className="space-y-4 text-muted-foreground">
-              <div>
-                <h3 className="font-semibold text-foreground mb-2">AI & Machine Learning</h3>
-                <p className="text-sm">
-                  Advanced natural language processing models trained on millions of verified articles,
-                  combined with knowledge graphs and semantic analysis for accurate fact-checking.
-                </p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground mb-2">Blockchain Infrastructure</h3>
-                <p className="text-sm">
-                  Ethereum-compatible smart contracts for immutable verdict storage, IPFS for
-                  decentralized evidence hosting, and ENS integration for human-readable addresses.
-                </p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground mb-2">Data Sources</h3>
-                <p className="text-sm">
-                  Integration with academic databases, government records, established fact-checking
-                  organizations, and verified news archives for comprehensive source verification.
-                </p>
-              </div>
-            </div>
-          </Card>
-
           {/* CTA */}
           <Card className="p-8 bg-gradient-primary text-center">
-            <h2 className="text-2xl font-bold mb-4 text-white">Join the Fight Against Misinformation</h2>
+            <h2 className="text-2xl font-bold mb-4 text-white">
+              Join the Fight Against Misinformation
+            </h2>
             <p className="text-white/90 mb-6 max-w-2xl mx-auto">
               TruthChain is more than a tool—it's a movement towards transparent, verifiable truth.
               Start verifying articles today and contribute to a more informed world.
             </p>
-            <div className="text-sm text-white/70">
-              * This is a demonstration frontend. Backend AI models and blockchain integration coming soon.
-            </div>
           </Card>
         </motion.div>
       </main>

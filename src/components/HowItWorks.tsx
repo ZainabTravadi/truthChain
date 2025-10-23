@@ -12,19 +12,19 @@ const HowItWorks = () => {
     {
       icon: Brain,
       title: 'AI Analysis',
-      description: 'Advanced models verify facts against trusted sources',
+      description: 'Advanced models verify facts using reliable data sources',
       color: 'from-accent to-primary',
     },
     {
       icon: Shield,
-      title: 'Blockchain Commit',
-      description: 'Verdict stored immutably on-chain with IPFS proof',
+      title: 'Evidence Verification',
+      description: 'AI cross-checks claims and filters misinformation',
       color: 'from-primary to-accent',
     },
     {
       icon: CheckCircle,
       title: 'Get Results',
-      description: 'Receive confidence score and detailed evidence',
+      description: 'Receive a confidence score and detailed evidence report',
       color: 'from-accent to-primary',
     },
   ];
@@ -32,6 +32,7 @@ const HowItWorks = () => {
   return (
     <section className="py-20 bg-gradient-dark">
       <div className="container mx-auto px-4">
+        {/* Section Heading */}
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -41,10 +42,11 @@ const HowItWorks = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">How It Works</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Four simple steps to verify any news article with AI and blockchain
+            Four simple steps to verify any news article with advanced AI analysis
           </p>
         </motion.div>
 
+        {/* Step Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, idx) => (
             <motion.div
@@ -60,9 +62,11 @@ const HowItWorks = () => {
                 {idx + 1}
               </div>
 
-              {/* Card */}
+              {/* Step Card */}
               <div className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-smooth h-full hover-lift">
-                <div className={`w-16 h-16 rounded-lg bg-gradient-to-br ${step.color} flex items-center justify-center mb-4`}>
+                <div
+                  className={`w-16 h-16 rounded-lg bg-gradient-to-br ${step.color} flex items-center justify-center mb-4`}
+                >
                   <step.icon className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">{step.title}</h3>
