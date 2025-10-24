@@ -19,19 +19,24 @@ const ConfidenceBar = ({ confidence, label, size = 'md' }: ConfidenceBarProps) =
     return 'from-red-500 to-red-400';
   };
 
+  // Safely round the confidence for display purposes
+  const displayConfidence = confidence.toFixed(2);
+  const barWidth = Math.min(100, Math.max(0, confidence)); // Ensure value is between 0 and 100
+
   return (
     <div className="w-full">
       {label && (
         <div className="flex items-center justify-between mb-2">
           <span className="text-sm font-medium">{label}</span>
-          <span className="text-sm font-bold">{confidence}%</span>
+          {/* FIX APPLIED: Use displayConfidence to show only 2 decimal places */}
+          <span className="text-sm font-bold">{displayConfidence}%</span>
         </div>
       )}
       <div className={`w-full ${sizeClasses[size]} bg-secondary rounded-full overflow-hidden`}>
         <motion.div
           className={`h-full bg-gradient-to-r ${getColor(confidence)}`}
           initial={{ width: 0 }}
-          animate={{ width: `${confidence}%` }}
+          animate={{ width: `${barWidth}%` }}
           transition={{ duration: 1.2, ease: 'easeOut', delay: 0.2 }}
         />
       </div>

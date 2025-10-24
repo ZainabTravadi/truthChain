@@ -10,6 +10,7 @@ import VerdictDetail from "./pages/VerdictDetail";
 import Explorer from "./pages/Explorer";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
+import AnalyticsDashboard from "./pages/AnalyticsDashboard";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,10 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route 
+          path="/dashboard" 
+          element={<AnalyticsDashboard />} 
+        />
           <Route path="/check" element={<Check />} />
           <Route path="/verdicts" element={<Verdicts />} />
           <Route path="/verdicts/:id" element={<VerdictDetail />} />
