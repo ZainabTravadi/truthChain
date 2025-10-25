@@ -23,6 +23,7 @@ const VerdictCard = ({ id, title, verdict, confidence, date, summary }: VerdictC
       color: 'text-green-500',
       bgColor: 'bg-green-500/10',
       borderColor: 'border-green-500/50',
+      solidBgColor: 'bg-green-500'
     },
     false: {
       icon: XCircle,
@@ -30,6 +31,7 @@ const VerdictCard = ({ id, title, verdict, confidence, date, summary }: VerdictC
       color: 'text-red-500',
       bgColor: 'bg-red-500/10',
       borderColor: 'border-red-500/50',
+      solidBgColor: 'bg-red-500'
     },
     mixed: {
       icon: AlertCircle,
@@ -37,6 +39,7 @@ const VerdictCard = ({ id, title, verdict, confidence, date, summary }: VerdictC
       color: 'text-yellow-500',
       bgColor: 'bg-yellow-500/10',
       borderColor: 'border-yellow-500/50',
+      solidBgColor: 'bg-yellow-500'
     },
   };
 

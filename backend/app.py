@@ -26,7 +26,16 @@ from google.genai.errors import APIError
 load_dotenv(find_dotenv())
 
 app = Flask(__name__)
-CORS(app) 
+# List all origins where your frontend might be running
+ALLOWED_ORIGINS = [
+    "http://localhost:8080",
+    "http://127.0.0.1:8080",
+    "http://localhost:3000",  # Common React dev server port
+    "http://127.0.0.1:5001"   # The backend's own address
+]
+
+# Configure CORS to explicitly allow those origins for all resources
+CORS(app, resources={r"/*": {"origins": ALLOWED_ORIGINS}}) 
 
 # --- CONFIGURATION ---
 
@@ -305,9 +314,82 @@ def save_or_update_source(source_url, verdict, confidence):
     except Exception: pass
 
 def get_verification_analytics():
-    if db is None: return {"error": "Database is not initialized. Cannot run analytics."}
-    # Placeholder logic (replace with full aggregation logic later)
-    return { "success": True, "total_metrics": {"total_articles_analyzed": 0} }
+    if db is None: 
+        return {"error": "Database is not initialized. Cannot run analytics."}
+
+    # 1. TOTAL METRICS CALCULATION (Count, Avg Confidence, Last Update)
+    total_metrics_pipeline = [
+        {
+            "$group": {
+                "_id": None,
+                "total_articles_analyzed": {"$sum": 1},
+                "overall_avg_confidence": {"$avg": "$confidence"},
+                "last_update": {"$max": "$timestamp"}
+            }
+        },
+        {"$project": {"_id": 0}} # Remove the _id: null field
+    ]
+    
+    total_metrics_result = list(db.articles.aggregate(total_metrics_pipeline))
+    
+    # Handle case where collection is empty
+    if not total_metrics_result:
+        metrics = {
+            "total_articles_analyzed": 0,
+            "overall_avg_confidence": 0.5,
+            "last_update": datetime.utcnow().isoformat()
+        }
+    else:
+        metrics = total_metrics_result[0]
+        # Convert datetime object to ISO string
+        metrics['last_update'] = metrics.get('last_update', datetime.utcnow()).isoformat()
+
+    # Get total unique sources from the separate 'sources' collection
+    metrics['total_unique_sources'] = db.sources.count_documents({})
+
+
+    # 2. VERDICT DISTRIBUTION CALCULATION
+    verdict_distribution_pipeline = [
+        {"$group": {"_id": "$verdict", "count": {"$sum": 1}}},
+        {"$sort": {"count": -1}}
+    ]
+    
+    verdicts_raw = list(db.articles.aggregate(verdict_distribution_pipeline))
+    total_count = metrics['total_articles_analyzed']
+    
+    verdict_distribution_list = []
+    
+    # Initialize all required verdict types (True, False, Mixed) to ensure they show up
+    # This prevents the frontend crash if one category is missing
+    verdict_map = {item['_id']: item['count'] for item in verdicts_raw}
+    
+    for verdict_type in ['true', 'false', 'mixed']:
+        count = verdict_map.get(verdict_type, 0)
+        percentage = (count / total_count * 100) if total_count > 0 else 0
+        verdict_distribution_list.append({
+            "verdict": verdict_type,
+            "count": count,
+            "percentage": round(percentage, 2)
+        })
+
+    # 3. TOP ANALYZED SOURCES CALCULATION
+    top_sources_pipeline = [
+        {"$group": {"_id": "$source_name", "total_analyses": {"$sum": 1}}},
+        {"$sort": {"total_analyses": -1}},
+        {"$limit": 5} # Limit to top 5
+    ]
+    
+    top_analyzed_sources_list = list(db.articles.aggregate(top_sources_pipeline))
+    # Note: the output structure already matches the interface: [{'_id': 'source', 'total_analyses': 5}]
+
+
+    # 4. CONSTRUCT FINAL RESPONSE
+    return {
+        "success": True,
+        "total_metrics": metrics,
+        "verdict_distribution": verdict_distribution_list,
+        "top_analyzed_sources": top_analyzed_sources_list
+    }
 
 def extract_article_text_from_url(url):
     """Fetches a URL and extracts the main article text using content density heuristics."""
@@ -650,9 +732,9 @@ def explain_analysis():
     # 2. Generate Explanation
     try:
         explanation = explainer.explain_instance(
-            article_text[:5000], 
+            article_text[:2000], 
             classifier_fn=predict_proba_for_lime, 
-            num_samples=1000, 
+            num_samples=300, 
             num_features=10, 
             labels=(0, 1) 
         )

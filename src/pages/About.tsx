@@ -1,46 +1,46 @@
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Shield, Zap, Users, Lock, Brain, Globe } from 'lucide-react';
+import { Shield, Zap, Users, Lock, Brain, Globe, Database, Search } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 
 const About = () => {
   const features = [
     {
       icon: Brain,
-      title: 'Advanced AI Models',
+      title: 'Hybrid AI Verification Engine',
       description:
-        'Powered by Google Gemini and integrated with trusted news APIs, our AI analyzes articles, cross-references claims, and evaluates reliability in real time.',
+        'We combine a fine-tuned RoBERTa model, Google Gemini reasoning, and real-time web-backed fact verification to evaluate news credibility.',
     },
     {
-      icon: Lock,
-      title: 'Data Integrity',
+      icon: Search,
+      title: 'Claim & Evidence Extraction',
       description:
-        'Our systems ensure all verification results remain secure, transparent, and tamper-proof within the platform.',
+        'Our system extracts the core claim in an article, identifies supporting and opposing evidence, and generates an explainable verification summary.',
     },
     {
       icon: Shield,
-      title: 'Source Credibility',
+      title: 'Source Reputation Intelligence',
       description:
-        'We cross-reference claims with trusted academic, governmental, and fact-checking sources with proven track records.',
+        'Domain credibility is evaluated using historical accuracy, publication bias, transparency, and cross-institutional trust scores.',
     },
     {
-      icon: Users,
-      title: 'Community Collaboration',
+      icon: Database,
+      title: 'Fact-Check API Integration',
       description:
-        'Users can provide feedback, flag inaccuracies, and contribute to improving the platform’s verification accuracy.',
+        'Claims are validated against global fact-checking databases and academic/government sources for verifiable truth grounding.',
     },
     {
-      icon: Zap,
-      title: 'Real-Time Analysis',
+      icon: Lock,
+      title: 'Adaptive Trust Scoring',
       description:
-        'Get instant verification results with detailed evidence breakdowns and confidence scoring.',
+        'Each article receives a confidence score powered by local ML predictions, evidence alignment, AI-generated text detection, and source reliability.',
     },
     {
       icon: Globe,
-      title: 'Open & Transparent',
+      title: 'Transparent & Inspectable',
       description:
-        'Our verification process is fully auditable, with all evidence sources publicly accessible.',
+        'Every result includes an explanation trail, evidence sources, and reasoning transparency — no black-box verdicts.',
     },
   ];
 
@@ -57,7 +57,7 @@ const About = () => {
             <span className="text-gradient">About TruthChain</span>
           </h1>
           <p className="text-xl text-center text-muted-foreground mb-12">
-            Fighting misinformation with cutting-edge artificial intelligence
+            A hybrid AI-powered platform for accurate, transparent news verification
           </p>
 
           {/* Mission */}
@@ -65,26 +65,32 @@ const About = () => {
             <h2 className="text-2xl font-bold mb-4">Our Mission</h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                In an era where misinformation spreads faster than truth, TruthChain provides a
-                transparent platform for verifying news articles using advanced AI and data-driven
-                analysis.
+                Misinformation spreads quickly — often faster than the truth. TruthChain exists to
+                restore clarity, trust, and accountability in the way information is consumed.
               </p>
+
               <p>
-                We believe that trust in information should be earned through verifiable evidence,
-                not editorial opinion. By combining artificial intelligence with trusted data
-                pipelines, we create a reliable fact-checking process that anyone can understand and
-                evaluate.
+                Instead of relying on opinions or *black-box* models, we use a **hybrid verification
+                pipeline** that analyzes text across multiple layers:
               </p>
+
+              <ul className="list-disc ml-6 space-y-1">
+                <li>A local ML model predicts intent and factual consistency</li>
+                <li>Google Gemini performs high-depth reasoning and claim verification</li>
+                <li>Global fact-checking databases validate real-world truth</li>
+                <li>Source credibility and historical behavior shape final trust scoring</li>
+              </ul>
+
               <p>
-                Our platform empowers users to make informed decisions by providing confidence scores
-                and detailed evidence that can’t be altered or censored.
+                Every result is traceable, explainable, and backed by evidence. No hidden logic. No
+                silent judgment. Just reasoned transparency.
               </p>
             </div>
           </Card>
 
-          {/* Features Grid */}
+          {/* Features */}
           <div className="mb-12">
-            <h2 className="text-2xl font-bold text-center mb-8">How We Do It</h2>
+            <h2 className="text-2xl font-bold text-center mb-8">How Our System Works</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {features.map((feature, idx) => (
                 <motion.div
@@ -109,11 +115,12 @@ const About = () => {
           {/* CTA */}
           <Card className="p-8 bg-gradient-primary text-center">
             <h2 className="text-2xl font-bold mb-4 text-white">
-              Join the Fight Against Misinformation
+              Join the Fight for Truth
             </h2>
             <p className="text-white/90 mb-6 max-w-2xl mx-auto">
-              TruthChain is more than a tool—it's a movement towards transparent, verifiable truth.
-              Start verifying articles today and contribute to a more informed world.
+              TruthChain is not just a verification tool — it’s a step toward a more informed
+              society. Analyze articles, verify claims, and help strengthen the reliability of the
+              information we share.
             </p>
           </Card>
         </motion.div>

@@ -73,14 +73,15 @@ const HeroSection = () => {
 
           {/* Subtext */}
           <motion.p
-    className="text-xs md:text-lg text-muted-foreground max-w-2xl mx-auto"
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6, delay: 0.2 }}
->
-    Experience real-time AI-powered fake news detection. 
-    Cutting-edge analysis designed to help you separate truth from misinformation.
-</motion.p>
+            className="text-xs md:text-lg text-muted-foreground max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            Experience real-time AI-powered fake news detection. 
+            TruthChain combines multiple AI models, web intelligence, and credibility checks 
+            to help you separate truth from misinformation.
+          </motion.p>
 
           {/* Buttons */}
           <motion.div
@@ -115,9 +116,21 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             {[
-              { icon: Zap, title: 'Instant Analysis', desc: 'AI-powered verification in minutes' },
-              { icon: Lock, title: 'Data Integrity', desc: 'Your checks remain private and secure' },
-              { icon: Shield, title: 'Transparent Results', desc: 'View detailed evidence sources' },
+              {
+                icon: Zap,
+                title: 'Hybrid AI Analysis',
+                desc: 'TruthChain fuses RoBERTa and Gemini AI to cross-check news using both local and real-time web intelligence.'
+              },
+              {
+                icon: Lock,
+                title: 'Source & Claim Verification',
+                desc: 'Each claim is validated through Google Fact Check Tools and source credibility scoring before final verdict.'
+              },
+              {
+                icon: Shield,
+                title: 'Transparent Evidence',
+                desc: 'Get a clear breakdown of verdicts, confidence levels, and supporting or contradictory sources — all in one place.'
+              },
             ].map((feature, idx) => (
               <div
                 key={idx}

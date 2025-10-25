@@ -81,7 +81,7 @@ const Explorer = () => {
         if (!domain || sourceCache[domain]) return; // Use cached data if available
 
         try {
-            const response = await fetch(`http://127.0.0.1:5000/api/source/${domain}`);
+            const response = await fetch(`http://127.0.0.1:5001/api/source/${domain}`);
             
             // Note: Backend returns 404 for unknown sources, which is handled here
             const data = await response.json();
@@ -117,7 +117,7 @@ const Explorer = () => {
         setIsLoading(true);
         setFetchError(null);
         try {
-            const response = await fetch('http://127.0.0.1:5000/api/daily-news');
+            const response = await fetch('http://127.0.0.1:5001/api/daily-news');
             const data = await response.json();
 
             if (!response.ok) {

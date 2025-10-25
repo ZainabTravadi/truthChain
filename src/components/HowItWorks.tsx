@@ -5,26 +5,26 @@ const HowItWorks = () => {
   const steps = [
     {
       icon: FileText,
-      title: 'Submit Content',
-      description: 'Paste article text or enter a URL to analyze',
+      title: 'Submit News or URL',
+      description: 'Paste an article or share a link : TruthChain extracts its core claim and context automatically.',
       color: 'from-primary to-accent',
     },
     {
       icon: Brain,
-      title: 'AI Analysis',
-      description: 'Advanced models verify facts using reliable data sources',
+      title: 'Hybrid AI Analysis',
+      description: 'Our RoBERTa and Gemini AI models jointly assess the text, scanning reliable global databases and the live web.',
       color: 'from-accent to-primary',
     },
     {
       icon: Shield,
-      title: 'Evidence Verification',
-      description: 'AI cross-checks claims and filters misinformation',
+      title: 'Cross-Verification & Evidence',
+      description: 'Claims are checked through Google Fact Check Tools and source credibility heuristics to ensure factual grounding.',
       color: 'from-primary to-accent',
     },
     {
       icon: CheckCircle,
-      title: 'Get Results',
-      description: 'Receive a confidence score and detailed evidence report',
+      title: 'Final Verdict & Insights',
+      description: 'TruthChain fuses all AI signals to deliver a clear verdict : True, False, or Mixed, with confidence scores and cited sources.',
       color: 'from-accent to-primary',
     },
   ];
@@ -42,7 +42,7 @@ const HowItWorks = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">How It Works</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Four simple steps to verify any news article with advanced AI analysis
+            TruthChain verifies any news article in four intelligent steps, powered by deep learning and real-time fact verification.
           </p>
         </motion.div>
 

@@ -57,7 +57,7 @@ const AnalyticsDashboard = () => {
         setIsLoading(true);
         setFetchError(null);
         try {
-            const response = await fetch('http://127.0.0.1:5000/api/analytics/summary');
+            const response = await fetch('http://127.0.0.1:5001/api/analytics/summary');
             const data = await response.json();
 
             if (!response.ok || data.error) {
@@ -161,7 +161,7 @@ const AnalyticsDashboard = () => {
                                     <p className="text-muted-foreground mb-4">Percentage breakdown of all historical analyses.</p>
                                     
                                     <div className="space-y-3">
-                                        {analytics.verdict_distribution.map((item) => {
+                                        {analytics.verdict_distribution?.map((item) => {
                                             const config = verdictConfig[item.verdict];
                                             const widthStyle = { width: `${item.percentage || 0}%` };
                                             return (
@@ -174,7 +174,7 @@ const AnalyticsDashboard = () => {
                                                     </div>
                                                     <div className="w-full bg-secondary rounded-full h-2.5">
                                                         <div 
-                                                            className={`${config.bgColor} ${config.color.replace('text', 'bg')} h-2.5 rounded-full transition-all duration-500`} 
+                                                            className={`${config.solidBgColor} ${config.color.replace('text', 'bg')} h-2.5 rounded-full transition-all duration-500`} 
                                                             style={widthStyle}
                                                         ></div>
                                                     </div>
@@ -195,7 +195,7 @@ const AnalyticsDashboard = () => {
                                             </TableRow>
                                         </TableHeader>
                                         <TableBody>
-                                            {analytics.top_analyzed_sources.map((source, index) => (
+                                            {analytics.top_analyzed_sources?.map((source, index) => (
                                                 <TableRow key={source._id}>
                                                     <TableCell className="font-medium">{source._id}</TableCell>
                                                     <TableCell className="text-right text-lg font-bold text-primary">{source.total_analyses}</TableCell>

@@ -54,7 +54,7 @@ const Navbar = () => {
           {/* Wallet Button */}
           <div className="hidden md:block">
             <Button variant="default" size="sm" className="bg-gradient-primary hover:glow-primary">
-              Connect Wallet
+              Connect With Me!
             </Button>
           </div>
 
@@ -92,7 +92,7 @@ const Navbar = () => {
                 </Link>
               ))}
               <Button variant="default" size="sm" className="bg-gradient-primary w-full">
-                Connect Wallet
+                Connect With Me!
               </Button>
             </div>
           </motion.div>
