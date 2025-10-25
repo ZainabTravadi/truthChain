@@ -91,9 +91,17 @@ const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
-              <Button variant="default" size="sm" className="bg-gradient-primary w-full">
-                Connect With Me!
-              </Button>
+              <a
+  href="https://www.linkedin.com/in/zainab-travadi-119a83373/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-full"
+>
+  <Button variant="default" size="sm" className="bg-gradient-primary w-full">
+    Connect With Me!
+  </Button>
+</a>
+
             </div>
           </motion.div>
         )}
