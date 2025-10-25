@@ -42,11 +42,11 @@ TruthChain is a hybrid misinformation detection system that evaluates the credib
 
 ## 🔴 Tech Stack
 
-Frontend: VITE + React.js, TailwindCSS, Shadcn UI, Framer Motion
-Backend: Node.js + Express
-ML Model: RoBERTa (Fake News Classifier)
-Reasoning: Google Gemini
-Database: MongoDB
+* Frontend: VITE + React.js, TailwindCSS, Shadcn UI, Framer Motion
+* Backend: Node.js + Express
+* ML Model: RoBERTa (Fake News Classifier)
+* Reasoning: Google Gemini
+* Database: MongoDB
 
 ---
 
@@ -55,14 +55,14 @@ Database: MongoDB
 Replace each placeholder with your own private API keys.
 Do **not** commit real keys.
 
-NEWS_API_KEY_NEWSAPI="YOUR_NEWSAPI_KEY"
-NEW_API_KEY_NEWSDATA="YOUR_NEWSDATA_KEY"
-GEMINI_API_KEY="YOUR_GEMINI_KEY"
+* NEWS_API_KEY_NEWSAPI="YOUR_NEWSAPI_KEY"
+* NEW_API_KEY_NEWSDATA="YOUR_NEWSDATA_KEY"
+* GEMINI_API_KEY="YOUR_GEMINI_KEY"
 
-MONGO_URI="mongodb://localhost:27017/"
-MONGO_DB_NAME="fake_news_db"
+* MONGO_URI="mongodb://localhost:27017/"
+* MONGO_DB_NAME="fake_news_db"
 
-FACT_CHECK_API_KEY="YOUR_FACTCHECK_KEY"
+* FACT_CHECK_API_KEY="YOUR_FACTCHECK_KEY"
 
 ---
 
