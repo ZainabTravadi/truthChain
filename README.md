@@ -115,11 +115,12 @@ npm run dev
 ## 🔴 Author
 
 Built by **Zainab Travadi**
-LinkedIn: [https://www.linkedin.com/in/zainab-travadi-119a83373/](https://www.linkedin.com/in/zainab-travadi-119a83373/)
+[LinkedIn](https://www.linkedin.com/in/zainab-travadi-119a83373/)
 📄 **Research Paper:**  
 [Fake News Detection System (PDF)](./papers/Research%20Paper_%20Fake%20News%20Detection%20System.pdf)
 ---
 
 ### 🔴 Truth deserves verification. Let’s protect it together.
+
 
 
